@@ -17,7 +17,8 @@
     "react": "^16.8.6",
     "react-awesome-slider": "^1.0.1",
     "react-dom": "^16.8.6",
-    "react-slick": "^0.24.0"
+    "react-slick": "^0.24.0",
+    "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
     "prettier": "^1.18.2"
