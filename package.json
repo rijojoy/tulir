@@ -15,7 +15,6 @@
   "dependencies": {
     "gatsby": "^2.13.51",
     "react": "^16.8.6",
-    "react-awesome-slider": "^1.0.1",
     "react-dom": "^16.8.6",
     "react-slick": "^0.24.0",
     "slick-carousel": "^1.8.1"
