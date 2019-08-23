@@ -11,10 +11,10 @@ const Layout = ({ children}) =>
                       <React.Fragment>
 	                      <Header />
 	                      	{children}
-	                      <Subscribe />
+	                    {/*  <Subscribe />
 	                      <ContactUs />
 						  <Footer />
-						  <Bottom />
+						  <Bottom /> */}
                      </React.Fragment>
            	);
 		};

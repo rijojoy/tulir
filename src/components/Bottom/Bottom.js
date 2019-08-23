@@ -9,7 +9,7 @@ const Bottom = () => {
             <div class="row">
                 <div class="col-md-12 col-sm-12">
                     <div class="block">
-                        <p>Copyright &copy; 2019 - Developed By <a href="">Rijo Joy</a></p>
+                        <p>Copyright &copy; 2019 - Developed By <a href='http://rijojoy.surge.sh/' target='__blank' >Rijo Joy</a></p>
                     </div>
                 </div>
             </div>
