@@ -1,11 +1,12 @@
 import React from "react"
 
 const SummaryList = (props) => {
-console.log("Orders Data");
-console.log(props.orders.orders);
-var rowdata= Object.keys(props.orders.orders[0]).map( (item) => 
+
+var rowdata= '';
+
+if(props.orders.orders[0] != undefined) {
+rowdata =	Object.keys(props.orders.orders[0]).map( (item) => 
    {
-         console.log(item);
          return (
    
                     <tr>
@@ -18,6 +19,8 @@ var rowdata= Object.keys(props.orders.orders[0]).map( (item) =>
          	    );
    }
 );
+}
+
 
    return(
 
