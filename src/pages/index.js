@@ -1,6 +1,16 @@
 import React from "react"
 import Slider from "../components/Slider/Slider";
 import Layout from "../components/Layout/Layout";
+import { useEffect } from 'react';
+import { navigate } from 'gatsby';
+
+export default () => {
+  useEffect(() => {
+    navigate('/Start/');
+  }, []);
+  return null;
+};
+
 
 const Index = () => {
 
@@ -22,4 +32,4 @@ const Index = () => {
 		);
 }
 
-export default Index;
+//export default Index;

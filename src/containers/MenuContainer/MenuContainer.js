@@ -1,5 +1,8 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 import Menu from "../../components/Menu/Menu";
+import AddToCart from "../../components/Cart/AddToCart";
+import * as actionTypes from "../../Constants/Actions";
 class MenuContainer extends Component {
     
 	state = {
@@ -23,7 +26,7 @@ class MenuContainer extends Component {
 	
 	addItem = (event) =>  {
           var cpyState = {...this.state.orders};
-          if(cpyState[event.target.id] != undefined){
+          if(cpyState[event.target.id] !== undefined){
           	cpyState[event.target.id].quantity++;
           }
           else{
@@ -31,6 +34,7 @@ class MenuContainer extends Component {
               item.id=event.target.id;
               item.quantity=1;
               cpyState[event.target.id] = item;
+              console.log(item);
           }
          
           this.setState({orders:cpyState});
@@ -39,15 +43,34 @@ class MenuContainer extends Component {
 	}
 
 	removeItem = (event) =>  {
-          console.log("Clicked");
-          console.log(event.target.id);
+     var cpyState = {...this.state.orders};
+          if(cpyState[event.target.id] !== undefined && cpyState[event.target.id].quantity>0){
+            cpyState[event.target.id].quantity--;
+          }
+          else {
+             var item = {};
+              item.id=event.target.id;
+              item.quantity=0;
+              cpyState[event.target.id] = item;
+              }
 
+            if(cpyState[event.target.id].quantity==0){
+                Object.keys(cpyState).slice(event.target.id);
+            }
+          
+          this.setState({orders:cpyState});
+          console.log(this.state.orders);
+	}
+
+	addToCart = () => {
+		this.props.addToCart(this.state.orders);
 	}
 
 	render() 
 	{
+          var disabled = (Object.keys(this.state.orders).length == 0)?true:false;
           return (
-
+                  <>
                     <Menu 
                         Items={this.state.items}
                         Orders={this.state.orders}
@@ -55,11 +78,29 @@ class MenuContainer extends Component {
                         removeItem={this.removeItem}
 
                     />
+
+                    <AddToCart 
+                        addToCart={this.addToCart}
+                        disabled={disabled}
+                    />
+                   </>
           	     );
                
 	}
+
+
        
 
 }
 
-export default MenuContainer;
+const mapStateToProps = null;
+
+const dispatchToProps = dispatch => {
+
+	return { addToCart: (orderData) => dispatch({type:actionTypes.ADD_CART,data:orderData}) }
+}
+
+export default connect(
+                      mapStateToProps,
+                      dispatchToProps
+                      )(MenuContainer);

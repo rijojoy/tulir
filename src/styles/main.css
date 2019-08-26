@@ -699,3 +699,62 @@ nav .block .navbar-default .navbar-nav > .active > a:hover:before {
 #footer-bottom p a {
   color: #FF4F02;
 }
+
+#start .block p {
+  padding: 25px 0px;
+  color: #fff;
+  font-size: 18px;
+}
+#start .block form .form-control {
+  width: 450px;
+  background: #fff;
+  opacity: 0.9;
+  border: none;
+  height: 65px;
+  border-radius: 0px;
+  font-size: 15px;
+}
+#start .block form .input-group-addon {
+  padding: 0px;
+  border: none;
+  background: none;
+}
+#start .block form .input-group-addon a {
+  display: block;
+  width: 212px;
+  height: 65px;
+  border: none;
+  border-radius: 0px;
+  background: #7EC3BB;
+  color: #fff;
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  -webkit-transition: .3s all;
+  -o-transition: .3s all;
+  transition: .3s all;
+  padding-top: 22px;
+} 
+
+#start .block form .input-group-addon button:hover {
+  background: #69a8a1;
+}
+
+#orderTable {
+  width: 80%;
+  margin-left: 10%;
+}
+th {
+  color: #ff530a;
+}
+
+th,
+td {
+  padding: 5px;
+  text-align: center;
+  border: 1px dashed black;
+}
+.totalAmtRed {
+  color: #ff530a;
+}
