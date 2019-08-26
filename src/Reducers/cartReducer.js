@@ -7,9 +7,9 @@ const initialState = {
 
 const cartReducer  = (state = initialState, action ) => {
 	switch(action.type){
-
+         
 		case actionsTypes.ADD_CART:
-             state.orders.push(action.data);
+             state.orders = action.data;
 		return state;
 		break;
 

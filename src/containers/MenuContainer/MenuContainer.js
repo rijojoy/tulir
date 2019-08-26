@@ -2,27 +2,19 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import Menu from "../../components/Menu/Menu";
 import AddToCart from "../../components/Cart/AddToCart";
-import * as actionTypes from "../../Constants/actions";
+import * as Actions from "../../Actions/index";
 class MenuContainer extends Component {
     
 	state = {
-                items : [
-                             
-                           {id:1, name:"Aloo Chaat", price:25},
-                           {id:2, name:"Bhel Puri", price:25},
-                           {id:3, name:"Aloo Tikki Chaat", price:25},
-                           {id:4, name:"Dahi Puri", price:25},
-                           {id:5, name:"Ragda Patties", price:25},
-                           {id:6, name:"Dahi Vada", price:25},
-                           {id:7, name:"Pakora", price:25},
-                           {id:8, name:"Mangode", price:25},
-                           {id:9, name:"Papri Chaat", price:25}
-                ],
-                orders : []
-
-                	      
+               orders : []     
                 
 	        }
+  componentDidMount() {
+
+    console.log("Component Mounted");
+    this.props.fetchItems();
+    
+  }
 	
 	addItem = (event) =>  {
           var cpyState = {...this.state.orders};
@@ -68,11 +60,13 @@ class MenuContainer extends Component {
 
 	render() 
 	{
+          console.log("Data Props");
+          console.log(this.props);
           var disabled = (Object.keys(this.state.orders).length == 0)?true:false;
           return (
                   <>
                     <Menu 
-                        Items={this.state.items}
+                        Items={this.props.items}
                         Orders={this.state.orders}
                         addItem={this.addItem}
                         removeItem={this.removeItem}
@@ -93,11 +87,20 @@ class MenuContainer extends Component {
 
 }
 
-const mapStateToProps = null;
+const mapStateToProps = state => {
+          
+      return {
+               
+               items:state.items.items 
+      }
+}
 
 const dispatchToProps = dispatch => {
 
-	return { addToCart: (orderData) => dispatch({type:actionTypes.ADD_CART,data:orderData}) }
+	return { 
+            fetchItems: () => dispatch(Actions.fetchItems()),
+            addToCart: (orderData) => dispatch(Actions.Cart(orderData)) 
+          }
 }
 
 export default connect(

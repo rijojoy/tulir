@@ -4,16 +4,16 @@ const SummaryList = (props) => {
 
 var rowdata= '';
 
-if(props.orders.orders[0] != undefined) {
-rowdata =	Object.keys(props.orders.orders[0]).map( (item) => 
+if(props.orders.orders != undefined) {
+rowdata = Object.keys(props.orders.orders).map( (item) => 
    {
          return (
    
                     <tr>
-                        <td>{props.orders.orders[0][item].id}</td>
+                        <td>{props.orders.orders[item].id}</td>
                         <td>Product Name</td>
-                        <td>{props.orders.orders[0][item].quantity}</td>
-                        <td>{props.orders.orders[0][item].price}</td>
+                        <td>{props.orders.orders[item].quantity}</td>
+                        <td>{props.orders.orders[item].price}</td>
                       </tr>
 
          	    );
