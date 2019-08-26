@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import Menu from "../../components/Menu/Menu";
 import AddToCart from "../../components/Cart/AddToCart";
-import * as actionTypes from "../../Constants/Actions";
+import * as actionTypes from "../../Constants/actions";
 class MenuContainer extends Component {
     
 	state = {
