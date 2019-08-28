@@ -436,6 +436,9 @@ nav .block .navbar-default .navbar-nav > .active > a:hover:before {
 }
 #price .block .pricing-list {
   padding-top: 85px;
+  background-color: white;
+  padding:50px;
+  min-height: 1170px;
 }
 #price .block .pricing-list ul {
   padding: 0 0 30px;
@@ -757,4 +760,37 @@ td {
 }
 .totalAmtRed {
   color: #ff530a;
+}
+
+#chaatcravings {
+  padding-top: 75px;
+  padding-bottom: 100px;
+  background: url("images/chaatcravings.png");/* blog/blog-bg.jpg */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+  background-position: center;
+}
+#chaatcravings:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: url("images/overlay-pattern.png") #000000;
+  opacity: 0.3;
+}
+.orderDetails {
+      background-color: white;
+    min-height: 500px;
+    padding-top: 100px;
+}
+.title {
+   text-align: left;
+    background-color: white;
+    padding: 10px;
 }

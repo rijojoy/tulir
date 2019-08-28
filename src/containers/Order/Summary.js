@@ -1,22 +1,33 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import SummaryList from "../../components/Order/SummaryList";
+import * as Actions from "../../Actions/index";
 class Summary extends Component {
 
+   handleSubmit = () => {
+
+      let orderData = {
+                        order:{
+                           userDetails:this.props.userDetails,
+                           items:this.props.orders.orders
+                        }
+      }
+      this.props.confirmOrder(orderData);
+   }
    render() {
          
-         console.log("State List");
-         console.log(this.props);
          return(
 
-                 <div className="pricing-list">
-                  <div className="title" style={{ padding: "30px 10%" }}>
-                    <h3>
-                      Order No : <span>1</span>
-                    </h3>
+                 <div>
+                  <div className="title">
                   </div>
-                  <SummaryList orders={this.props.data}/>
-                </div>
+                  <SummaryList 
+                          orders={this.props.orders}
+                          items={this.props.items}
+                          clickSubmit={this.handleSubmit}
+                          />
+                  
+                  </div>
           )
 
    }
@@ -24,9 +35,19 @@ class Summary extends Component {
 }
 
 const mapStateToProps = (state) => {
-   
    return {
-             data:state.orders
+             userDetails:state.userDetails,
+             orders:state.orders,
+             items:state.items.items
    }
 }
-export default connect(mapStateToProps)(Summary);
+
+const dispatchToProps = (dispatch) => {
+  return {
+         confirmOrder: (data) => dispatch(Actions.saveOrder(data)) 
+  }
+}
+export default connect(
+                       mapStateToProps,
+                       dispatchToProps
+                      )(Summary);

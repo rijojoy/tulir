@@ -8,14 +8,16 @@ import Bottom from "../Bottom/Bottom";
 const Layout = ({ children}) => 
 		{
            return(
+                     <div id="chaatcravings">
                       <React.Fragment>
-	                      <Header />
+	                    {/*  <Header /> */}
 	                      	{children}
-	                    {/*  <Subscribe />
+	                    {/* <Subscribe />
 	                      <ContactUs />
-						  <Footer />
-						  <Bottom /> */}
+						  <Footer /> */}
+						  <Bottom /> 
                      </React.Fragment>
+                    </div>
            	);
 		};
 

@@ -17,6 +17,7 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-redux": "^7.1.0",
+    "react-scratchcard": "^1.1.2",
     "react-slick": "^0.24.0",
     "redux": "^4.0.4",
     "redux-thunk": "^2.3.0",
