@@ -1,5 +1,5 @@
 import React from "react"
-import ScratchCard from 'react-scratchcard';
+//import ScratchCard from 'react-scratchcard';
 import Layout from "../components/Layout/Layout";
 const Confirm = () => {
     const settings = {
@@ -21,12 +21,12 @@ const Confirm = () => {
                                         <div class="title">
 
                                             <h2> Thank You for your Order </h2>
-                                           <h3>Scratch and <span>Win</span></h3> <br />
-                                            <ScratchCard {...settings}>
+                                           {/*   <h3>Scratch and <span>Win</span></h3> <br />
+                                         <ScratchCard {...settings}>
                                                 Congratulations! You WON!
                                             </ScratchCard>
-                                          
-
+                                          */}
+                               
                                         </div>
                                     </div>
                                 </div>
