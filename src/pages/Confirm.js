@@ -5,7 +5,7 @@ const Confirm = () => {
     const settings = {
   width: 640,
   height: 480,
-  image: '/images/scratch.jpg',
+  image: "/images/scratch.jpg",
   finishPercent: 50,
   onComplete: () => console.log('The card is now clear!')
 };
