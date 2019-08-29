@@ -1,6 +1,7 @@
 import React from "react"
 //import ScratchCard from 'react-scratchcard';
 import Layout from "../components/Layout/Layout";
+import Gift from "../containers/Order/Gift";
 const Confirm = () => {
     const settings = {
   width: 640,
@@ -17,15 +18,17 @@ const Confirm = () => {
                             <div class="col-md-12">
                                 <div class="block">
                                     <h1 class="heading wow fadeInUp" data-wow-duration="300ms" data-wow-delay="300ms">Order <span>Confirmation</span></h1>
-                                    <div class="confirm col-md-offset-3 col-sm-offset-1">
+                                    <div>
                                         <div class="title">
-
-                                            <h2> Thank You for your Order </h2>
-                                           {/*   <h3>Scratch and <span>Win</span></h3> <br />
+                                           
+                                          <Gift />
+                                          {/* <h3>Scratch and <span>Win</span></h3> <br />
                                          <ScratchCard {...settings}>
                                                 Congratulations! You WON!
                                             </ScratchCard>
+
                                           */}
+                                         
                                
                                         </div>
                                     </div>

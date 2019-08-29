@@ -13,7 +13,7 @@ import AdminSummaryList from "../../components/Order/AdminSummaryList";
 const ListOrderItems = (props) => {
 	console.log("Props Data");
 	console.log(props);
-	var orderData = Object.keys(props.items).map( (item) => {
+	var orderData = Object.keys(props.items).reverse().map( (item) => {
                      console.log(props.items[item]);
                      var ret = '';
                      if(props.items[item]['order']['userDetails']['name']  == undefined){

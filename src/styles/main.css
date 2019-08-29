@@ -746,8 +746,13 @@ nav .block .navbar-default .navbar-nav > .active > a:hover:before {
 
 #orderTable {
   width: 80%;
-  margin-left: 10%;
+  margin-left: 6%;
 }
+@media only screen and (max-width: 300px) {
+  #orderTable {
+    margin-left: 10% !important;
+    }
+  }
 th {
   color: #ff530a;
 }
@@ -845,4 +850,10 @@ td {
 }
 .logo-img {
   padding-left: 25%;
+}
+.heart{
+  color:red;
+}
+.gift {
+  font-size:50px;
 }

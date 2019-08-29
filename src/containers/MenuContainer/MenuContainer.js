@@ -47,7 +47,8 @@ class MenuContainer extends Component {
               }
 
             if(cpyState[event.target.id].quantity==0){
-                Object.keys(cpyState).slice(event.target.id);
+              console.log("Quant is zero");
+               delete cpyState[event.target.id];
             }
           
           this.setState({orders:cpyState});
