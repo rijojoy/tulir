@@ -9,11 +9,9 @@ const Layout = ({ children}) =>
 		{
            return(
                      <div id="chaatcravings">
-                     <div class="row">
-                       <div class="col-md-offset-4 col-md-6 logo-img" >
+                       <div class="heading" >
                        <img src="/images/logo.jpg" height="220" width="200" />
                        </div>
-                     </div>
                       <React.Fragment>
 	                    {/*  <Header /> */}
 	                      	{children}

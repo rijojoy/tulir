@@ -9,7 +9,8 @@ const Bottom = () => {
             <div class="row">
                 <div class="col-md-12 col-sm-12">
                     <div class="block">
-                        <p>Copyright &copy; 2019 - Developed By <a href='http://rijojoy.surge.sh/' target='__blank' >Rijo Joy</a></p>
+                        <p>Made with Love By Rijo Joy, Pooja Dhanwani</p>
+                        <p>Support & Inspirations By Bhushan Kuppasta,Manik Dhawan, Sunanda Rath, Hafsa Sultana, Savin Shetty, Shivam Rastogi</p>
                     </div>
                 </div>
             </div>
