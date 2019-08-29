@@ -14,7 +14,8 @@ class Gift extends Component {
                  <div class="panel-heading"> Thank You for your Order !!!</div>
                     <div class="panel-body">
 
-                        Your Order is successfully placed.
+                        Your Order is successfully placed. Give your name in the counter to recieve your order. 
+                        <br/> <span>!!!! &#9827; Bon Appétit &#9827; !!!!</span>
                        {/*<button class="btn btn-success">
                        <span class="gift"> &#9827; </span>
                        Click here to see your Gift!!
