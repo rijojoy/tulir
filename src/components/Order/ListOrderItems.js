@@ -11,23 +11,25 @@ import {
 import 'react-accessible-accordion/dist/fancy-example.css';
 import AdminSummaryList from "../../components/Order/AdminSummaryList";
 const ListOrderItems = (props) => {
-	console.log("Props Data");
-	console.log(props);
-	var orderData = Object.keys(props.items).reverse().map( (item,k) => {
-                     console.log(props.items[item]);
+	
+	var i=1;
+	var orderData = Object.keys(props.items).map( (item,k) => {
+                    
                      var ret = '';
                      if(props.items[item]['order']['userDetails']['name']  == undefined){
                            ret = '';
                      }
                      else{
-                     	var cnt = k+1;
+                     	console.log("I Val"+i);
+                     	//var cnt = k+1;
                      	console.log("5 Multiple");
-                     	console.log(cnt%5);
-                     	var winner = (cnt%5 == 0)?1:0;
+                     	console.log(i%5);
+                     	var winner = (i%5 == 0)?1:0;
                      	var winnerBtn = '';
                      	    if(winner == 1){
                      	    	winnerBtn = <button class="btn btn-warning"> &#9818; Winner</button> ;
                      	    }
+                     	    i++;
                      	ret =  <Accordion>
 					            <AccordionItem>
 					                <AccordionItemHeading>
