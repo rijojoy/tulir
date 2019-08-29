@@ -12,8 +12,9 @@ import 'react-accessible-accordion/dist/fancy-example.css';
 import AdminSummaryList from "../../components/Order/AdminSummaryList";
 const ListOrderItems = (props) => {
 	
-	var i=1;
-	var orderData = Object.keys(props.items).map( (item,k) => {
+	var i=Object.keys(props.items).length;
+
+	var orderData = Object.keys(props.items).reverse().map( (item,k) => {
                     
                      var ret = '';
                      if(props.items[item]['order']['userDetails']['name']  == undefined){
@@ -29,7 +30,7 @@ const ListOrderItems = (props) => {
                      	    if(winner == 1){
                      	    	winnerBtn = <button class="btn btn-warning"> &#9818; Winner</button> ;
                      	    }
-                     	    i++;
+                     	    i--;
                      	ret =  <Accordion>
 					            <AccordionItem>
 					                <AccordionItemHeading>
