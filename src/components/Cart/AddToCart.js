@@ -6,7 +6,7 @@ const AddToCart = (props) => {
 	return(
 
              <div style={{float:"right"}}>
-                <Link to="/OrderSummary/" class="btn btn-default" onClick={props.addToCart} disabled={props.disabled}>Add To Cart</Link>
+                <Link to="/OrderSummary/" class="btn btn-success" onClick={props.addToCart} disabled={props.disabled}>Add To Cart</Link>
              </div>
 		  )
 }

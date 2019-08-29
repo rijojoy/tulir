@@ -25,7 +25,13 @@ class UserDetails extends Component {
     	 this.props.setUserDetails(this.state.userDetails);
     }
 	render() {
-
+    
+    var link = (this.state.userDetails.name != '')? <Link 
+                                               class="btn btn-success btn-lg" 
+                                               to="/Price/"
+                                               onClick={this.clickHandler}>
+                                               Enter
+                                          </Link> : <button disabled="true" class="btn btn-success btn-lg">Enter</button>
 		return (
                     
                      <div class="panel panel-info">
@@ -39,12 +45,8 @@ class UserDetails extends Component {
                                           onChange={this.changeHandler}
                                           width="100"/>
                                           <br />
-                                           <Link 
-                                               class="btn btn-success btn-lg" 
-                                               to="/Price/"
-                                               onClick={this.clickHandler}>
-                                               Enter
-                                          </Link>
+                                          {link}
+                                          
                       </div>
                     </div>
                      

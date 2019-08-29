@@ -8,18 +8,22 @@ const Menu = (props) => {
                             <div class="item-title">
                                 <h2>{item.name}</h2>
                                 <div class="border-bottom"></div>
-                                <span>Rs. {item.price} 
+                                <span>
+                                Rs. {item.price} 
+                                &nbsp;
                                 <button 
                                   onClick={props.addItem} 
-                                  id={item.id}>+</button>
+                                  id={item.id}
+                                  class="btn btn-success"
+                                  >+</button>
                                 &nbsp;{quant}&nbsp;
                                 <button
                                   onClick={props.removeItem}
-                                   id={item.id}>-</button> 
+                                   id={item.id}
+                                    class="btn btn-danger">-</button> 
                                 </span>
 
                             </div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim&&</p>
                         </div>
                     </li>;
    });

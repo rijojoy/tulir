@@ -62,3 +62,47 @@ export const errorSaveOrder = () => {
 		type:ActionTypes.ERROR_SAVE_ORDER
 	}
 }
+
+/*** Fetch Orders ***/
+export const fetchOrdersBegin = () => {
+     
+     console.log("Orders Fetch Begin");
+	 return ({
+
+	 	     type:ActionTypes.FETCH_ORDERS_BEGIN
+	 });
+}
+
+export const fetchOrders = () => {
+       
+        console.log("Orders Fetch Action");
+        
+	        return (dispatch) => 
+	        {
+                    
+                    dispatch(fetchOrdersBegin());
+                    fetch(ordersUrl)
+                        .then(handleErrors)
+                        .then(res => res.json())
+                        .then(json => {
+                        	dispatch(fetchOrdersSuccess(json));
+                        	return json;
+                        })
+	        };
+	        
+}
+
+function handleErrors(response){
+  if (!response.ok) {
+    throw Error(response.statusText);
+  }
+  return response;
+}
+
+export const fetchOrdersSuccess = (data) => {
+	return({
+
+		  type:ActionTypes.FETCH_ORDERS_SUCCESS,
+		  data:data
+	})
+}

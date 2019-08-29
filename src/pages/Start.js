@@ -18,7 +18,7 @@ const Start = () => {
                 </h1>
                 <div class="pricing-list">
                   <div class="row">
-                    <div class="col-md-offset-3 col-md-4 col-sm-2 col-sm-offset-2">
+                    <div class="col-md-offset-4 col-md-4 col-sm-2 col-sm-offset-2">
                       <div class="form-group">
                        <UserDetails />
                       </div>
