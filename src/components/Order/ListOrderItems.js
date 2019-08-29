@@ -13,13 +13,21 @@ import AdminSummaryList from "../../components/Order/AdminSummaryList";
 const ListOrderItems = (props) => {
 	console.log("Props Data");
 	console.log(props);
-	var orderData = Object.keys(props.items).reverse().map( (item) => {
+	var orderData = Object.keys(props.items).reverse().map( (item,k) => {
                      console.log(props.items[item]);
                      var ret = '';
                      if(props.items[item]['order']['userDetails']['name']  == undefined){
                            ret = '';
                      }
                      else{
+                     	var cnt = k+1;
+                     	console.log("5 Multiple");
+                     	console.log(cnt%5);
+                     	var winner = (cnt%5 == 0)?1:0;
+                     	var winnerBtn = '';
+                     	    if(winner == 1){
+                     	    	winnerBtn = <button class="btn btn-warning"> &#9818; Winner</button> ;
+                     	    }
                      	ret =  <Accordion>
 					            <AccordionItem>
 					                <AccordionItemHeading>
@@ -29,9 +37,10 @@ const ListOrderItems = (props) => {
 					                            <h2>{props.items[item]['order']['userDetails']['name']}</h2>
 					                            </div>
 					                             <div class="col-md-4">
-					                            <a class="btn btn-success">Accept Order</a>
+                                                {winnerBtn} &nbsp;
+					                         {/*   <a class="btn btn-success">Accept Order</a>
 					                            &nbsp;
-					                            <a class="btn btn-danger">Deny Order</a>
+					                            <a class="btn btn-danger">Deny Order</a> */}
 					                            </div>
 					                       </div>
 					                    </AccordionItemButton>
